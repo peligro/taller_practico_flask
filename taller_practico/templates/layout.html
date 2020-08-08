@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Taller Práctico de Flask - {%block title %} {%endblock%}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li>
+                <a href="{{ url_for('nosotros') }}">Nosotros</a>
+            </li>
+            <li>
+                <a href="{{ url_for('servicios') }}">Servicios</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contacto') }}">Contacto</a>
+            </li>
+        </ul>
+        <!--contenido-->
+        {% block content %} {% endblock %}
+        <!--/contenido-->
+    </div>
+</body>
+
+</html>

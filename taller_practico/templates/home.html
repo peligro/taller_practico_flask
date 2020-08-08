@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block title%} página principal {%endblock%}
+<!---->
+{% block content %}
+<h1>Hola bienvend@</h1>
+<p>Valor de texto= {{ texto|safe }}</p>
+
+{% if edad >=18%} es mayor de edad {% else %} es menor de edad {%endif%}
+<hr />
+<ul>
+
+    {% for i in range(1, 11) %}
+    <li> {{ i }} </li>
+    {% endfor %}
+
+</ul>
+{% endblock %}
