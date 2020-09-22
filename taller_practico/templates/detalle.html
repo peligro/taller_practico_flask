@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+<!---->
+{% block content %}
+<ol class="breadcrumb">
+    <li><a href="{{url_for('home')}}">Home</a></li>
+    <li><a href="{{url_for('servicios')}}">Servicios</a></li>
+    <li class="active">{{datos[1]}}</li>
+</ol>
+<h2>Estos son nuestros servicios</h2>
+
+<div class="media">
+    <div class="media-left media-middle">
+        <a href="{{ url_for('servicios_detalle', slug=datos[2]) }}">
+            <img class="media-object" src="{{datos[4]}}" alt="{{datos[1]}}" width="200" height="200" />
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{datos[1] }}</h4>
+        {{datos[3]}}
+    </div>
+</div>
+{% endblock %}

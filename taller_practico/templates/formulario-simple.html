@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+<!---->
+{% block content %}
+<h1>Formulario simple</h1>
+<form action="" method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="correo">E-Mail</label>
+        <input type="text" name="correo" id="correo" placeholder="E-Mail" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="text" name="telefono" id="telefono" placeholder="Teléfono" class="form-control" />
+    </div>
+    <hr />
+    <input type="submit" value="Enviar" title="Enviar" class="btn btn-primary" />
+</form>
+{% endblock %}

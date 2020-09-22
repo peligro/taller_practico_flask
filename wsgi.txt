@@ -1,0 +1,25 @@
+<VirtualHost *:80>
+   ServerName flaskapp.dev
+   WSGIDaemonProcess ejemplo_1 user=peligro group=www-data threads=2
+   WSGIScriptAlias / /var/www/html/clientes/tamila/test/python/flask/ejemplo_1/run.wsgi
+   <Directory /var/www/html/clientes/tamila/test/python/flask/ejemplo_1>
+     WSGIProcessGroup ejemplo_1
+     WSGIApplicationGroup %{GLOBAL}
+     Order deny,allow
+     Allow from all
+   </Directory>
+   Alias "/static/" "/var/www/html/clientes/tamila/test/python/flask/ejemplo_1/static/"
+   <Directory /var/www/html/clientes/tamila/test/python/flask/ejemplo_1/static/>
+     Order allow,deny
+     Allow from all
+   </Directory>
+
+	Alias "/templates/" "/var/www/html/clientes/tamila/test/python/flask/ejemplo_1/templates/"
+   <Directory /var/www/html/clientes/tamila/test/python/flask/ejemplo_1/templates/>
+     Order allow,deny
+     Allow from all
+   </Directory>
+
+   ErrorLog /var/www/html/clientes/tamila/test/python/flask/ejemplo_1/error.log
+   CustomLog /var/www/html/clientes/tamila/test/python/flask/ejemplo_1/access.log combined
+</VirtualHost>

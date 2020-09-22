@@ -3,15 +3,17 @@
 <!---->
 {% block content %}
 <h2>Estos son nuestros servicios</h2>
-<ul>
-    <li>
-        <a href="{{ url_for('servicios_detalle', slug='marketing-digital') }}">Marketing Digital</a>
-    </li>
-    <li>
-        <a href="{{ url_for('servicios_detalle_dos', id1=12, id2='mi-mama-me-los-compro') }}">SMS Marketing</a>
-    </li>
-    <li>
-        <a href="">Gafimication</a>
-    </li>
-</ul>
-{% endblock %}
+
+{% for dato in datos %}
+<div class="media">
+    <div class="media-left media-middle">
+        <a href="{{ url_for('servicios_detalle', slug=dato[2]) }}">
+            <img class="media-object" src="{{dato[4]}}" alt="{{dato[1]}}" width="200" height="200" />
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{dato[1] }}</h4>
+        {{dato[3]}}
+    </div>
+</div>
+{% endfor %} {% endblock %}
